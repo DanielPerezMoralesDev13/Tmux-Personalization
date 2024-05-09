@@ -1,13 +1,16 @@
-# ***Tmux en Linux***
+<!-- Autor: Daniel Benjamin Perez Morales -->
+<!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
+<!-- Correo electrónico: danielperezdev@proton.me  -->
+# ***Tmux on Linux***
 
-> *Este repositorio contiene información y guías sobre cómo instalar y usar tmux en Linux. Tmux es un multiplexor de terminal que permite múltiples sesiones y ventanas en una sola terminal.*
+> *This repository contains information and guides on how to install and use tmux on Linux. Tmux is a terminal multiplexer that allows multiple sessions and windows in a single terminal.*
 
-## **Contenido del Repositorio**
+## **Repository Contents**
 
-*El repositorio contiene los siguientes ficheros markdown:*
+*The repository contains the following markdown files:*
 
-1. *`instalacion.md`: Este fichero contiene instrucciones detalladas sobre cómo instalar tmux en sistemas operativos Linux basados en Debian y en macOS.*
+1. *`installation.md`: This file contains detailed instructions on how to install tmux on Debian-based Linux operating systems and macOS.*
 
-2. *`comandos.md`: Este fichero proporciona una lista de comandos de tmux que son útiles para la navegación y la gestión de sesiones y ventanas.*
+2. *`commands.md`: This file provides a list of tmux commands that are useful for navigation and managing sessions and windows.*
 
-3. *`personalizacions.md`: Este fichero describe cómo personalizar tmux utilizando oh-my-tmux para adaptarlo a tus necesidades, incluyendo cómo cambiar los atajos de teclado y modificar la apariencia de tmux.*
+3. *`customizations.md`: This file describes how to customize tmux using oh-my-tmux to suit your needs, including how to change keyboard shortcuts and modify the appearance of tmux.*
