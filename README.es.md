@@ -14,3 +14,11 @@
 2. *`comandos.md`: Este fichero proporciona una lista de comandos de tmux que son útiles para la navegación y la gestión de sesiones y ventanas.*
 
 3. *`personalizacions.md`: Este fichero describe cómo personalizar tmux utilizando oh-my-tmux para adaptarlo a tus necesidades, incluyendo cómo cambiar los atajos de teclado y modificar la apariencia de tmux.*
+
+## **Contribuciones**
+
+> ¡Se aceptan contribuciones! Si tienes sugerencias, correcciones o deseas agregar contenido adicional a este proyecto, no dudes en abrir un problema o enviar una solicitud de extracción. Tu ayuda es fundamental para hacer de este proyecto una referencia completa y actualizada para la comunidad de desarrollo.
+
+## **Licencia**
+
+> Este repositorio se publica bajo la Licencia MIT. Siéntete libre de utilizar, modificar y distribuir el contenido de acuerdo con los términos de esta licencia.
