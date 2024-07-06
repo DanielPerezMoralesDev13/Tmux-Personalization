@@ -1,12 +1,12 @@
 <!-- Autor: Daniel Benjamin Perez Morales -->
 <!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
-<!-- Correo electrónico: danielperezdev@proton.me  -->
+<!-- Correo electrónico: danielperezdev@proton.me -->
 # ***Licencia MIT***
 
 ## ***Derechos de Autor (c) 2024 DanielPerezMoralesDev13***
 
 *Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia*
-*de este software y los archivos de documentación asociados (el "Software"), para tratar*
+*de este software y los ficheros de documentación asociados (el "Software"), para tratar*
 *con el Software sin restricciones, incluidos, entre otros, los derechos*
 *para usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender*
 *copias del Software, y permitir a las personas a las que se les proporcione el Software*

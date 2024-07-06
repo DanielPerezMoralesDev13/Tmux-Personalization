@@ -1,6 +1,6 @@
 <!-- Autor: Daniel Benjamin Perez Morales -->
 <!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
-<!-- Correo electrónico: danielperezdev@proton.me  -->
+<!-- Correo electrónico: danielperezdev@proton.me -->
 # ***Tmux on Linux***
 
 > *This repository contains information and guides on how to install and use tmux on Linux. Tmux is a terminal multiplexer that allows multiple sessions and windows in a single terminal.*

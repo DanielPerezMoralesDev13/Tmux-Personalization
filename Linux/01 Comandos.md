@@ -1,7 +1,10 @@
 <!-- Autor: Daniel Benjamin Perez Morales -->
 <!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
-<!-- Correo electrónico: danielperezdev@proton.me  -->
-**_Comandos_**
+<!-- Correo electrónico: danielperezdev@proton.me -->
+
+# **_Ver la versión de Tmux_**
+
+**Indices:**
 
 - [**_Ver la versión de Tmux_**](#ver-la-versión-de-tmux)
 - [**_Iniciar Tmux_**](#iniciar-tmux)
@@ -12,15 +15,11 @@
 - [**_Listar todas las sesiones_**](#listar-todas-las-sesiones)
 - [**_Adjuntar a la última sesión_**](#adjuntar-a-la-última-sesión)
 - [**_Ventanas_**](#ventanas)
-- [**_Otros comandos_**](#otros-comandos-1)
+  - [**_Otros comandos:_**](#otros-comandos-1)
 - [**_Activar el modo de ratón_**](#activar-el-modo-de-ratón)
 - [**_Establecer una opción para todas las sesiones_**](#establecer-una-opción-para-todas-las-sesiones)
 - [**_Obtener una lista completa de comandos_**](#obtener-una-lista-completa-de-comandos)
 - [**_Comandos Especiales_**](#comandos-especiales)
-
----
-
-# **_Ver la versión de Tmux_**
 
 > _Para ver la versión de Tmux, ejecuta el siguiente comando:_
 
@@ -349,7 +348,7 @@ Ctrl-b Ctrl-l
 Ctrl-b 0-9
 ```
 
-# **_Otros comandos_**
+## **_Otros comandos:_**
 
 - _Mostrar todos los atajos de teclado_
 
@@ -421,5 +420,5 @@ tmux join-pane -s 1 -t 2
 
 > **_Recursos adicionales_**
 
-- [**Tmux Cheat Sheet**](https://tmuxcheatsheet.com/ "https://tmuxcheatsheet.com/")
-- [**Tmux GitHub**](https://github.com/tmux/tmux "https://github.com/tmux/tmux")
+- _[Tmux Cheat Sheet](https://tmuxcheatsheet.com/ "https://tmuxcheatsheet.com/")_
+- _[Tmux GitHub](https://github.com/tmux/tmux "https://github.com/tmux/tmux")_
