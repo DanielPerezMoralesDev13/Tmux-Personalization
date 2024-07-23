@@ -23,6 +23,11 @@
     - [**_Establecer una opción para todas las sesiones_**](#establecer-una-opción-para-todas-las-sesiones)
     - [**_Obtener una lista completa de comandos_**](#obtener-una-lista-completa-de-comandos)
     - [**_Comandos Especiales_**](#comandos-especiales)
+    - [_**Barra de estado**_](#barra-de-estado)
+    - [_**Primera forma: Usando el modo de comando de tmux**_](#primera-forma-usando-el-modo-de-comando-de-tmux)
+    - [_**Segunda forma: Usando la línea de comandos del sistema**_](#segunda-forma-usando-la-línea-de-comandos-del-sistema)
+    - [_**Explicación Adicional: Autocompletado en el Modo de Comando de tmux**_](#explicación-adicional-autocompletado-en-el-modo-de-comando-de-tmux)
+    - [_**Ejemplo Práctico**_](#ejemplo-práctico)
     - [**_Recursos adicionales_**](#recursos-adicionales)
 
 > _Para ver la versión de Tmux, ejecuta el siguiente comando:_
@@ -401,7 +406,7 @@ bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse"
 
 ### _**Funciones de Vinculación**_
 
-- **`<prefix> e`:** _Abre el archivo de personalización `.local` con el editor definido por `$EDITOR` (por defecto `vim` cuando está vacío)._
+- **`<prefix> e`:** _Abre el fichero de personalización `.local` con el editor definido por `$EDITOR` (por defecto `vim` cuando está vacío)._
 - **`<prefix> r`:** _Recarga la configuración._
 - **`C-l`:** _Limpia la pantalla y el historial de tmux._
 - **`<prefix> C-c`:** _Crea una nueva sesión._
@@ -471,6 +476,54 @@ tmux join-pane -s 2.1 -t 1
 # Mover el panel activo de la ventana 1 a la ventana 2
 tmux join-pane -s 1 -t 2
 ```
+
+### _**Barra de estado**_
+
+- **En tmux, los comandos `set status on` y `set status off` se utilizan para mostrar u ocultar la barra de estado. Aquí están las dos formas de hacerlo:**
+
+### _**Primera forma: Usando el modo de comando de tmux**_
+
+1. **Inicia el modo de comando:**
+   - _Presiona `Ctrl + b` para activar el prefijo predeterminado._
+   - _Luego presiona `:` para abrir la línea de comandos de tmux._
+
+2. **Ejecuta los comandos:**
+   - _Para mostrar la barra de estado, escribe `set status on` y presiona `Enter`._
+   - _Para ocultar la barra de estado, escribe `set status off` y presiona `Enter`._
+
+### _**Segunda forma: Usando la línea de comandos del sistema**_
+
+1. **Ejecuta los comandos directamente desde la terminal:**
+   - _Para mostrar la barra de estado, escribe `tmux set status on` y presiona `Enter`._
+   - _Para ocultar la barra de estado, escribe `tmux set status off` y presiona `Enter`._
+
+- _Ambas formas logran el mismo objetivo, pero la primera se realiza dentro de una sesión activa de tmux, mientras que la segunda se puede hacer desde fuera de la sesión tmux, siempre y cuando tmux esté corriendo y se esté apuntando a la sesión correcta._
+
+### _**Explicación Adicional: Autocompletado en el Modo de Comando de tmux**_
+
+> [!TIP]
+> **Cuando utilizas el modo de comando de tmux, también puedes beneficiarte del autocompletado. Aquí te explico cómo funciona:**
+
+1. **Inicia el modo de comando:**
+   - _Presiona `Ctrl + b` para activar el prefijo predeterminado._
+   - _Luego presiona `:` para abrir la línea de comandos de tmux._
+
+2. **Escribe el comando y usa el autocompletado:**
+   - _Comienza a escribir un comando, por ejemplo, `set status`._
+   - _Presiona `Tab`. Tmux mostrará una lista de comandos relacionados que comienzan con lo que has escrito. Esto te permite ver todas las opciones disponibles y seleccionar la correcta sin necesidad de recordar el nombre exacto del comando._
+
+### _**Ejemplo Práctico**_
+
+1. **Mostrar la barra de estado:**
+   - _Presiona `Ctrl + b` + `:` para abrir la línea de comandos._
+   - _Escribe `set stat` y presiona `Tab`. Verás una lista de comandos que comienzan con `set stat`, incluyendo `set status`._
+   - _Selecciona `set status on` y presiona `Enter`._
+
+2. **Ocultar la barra de estado:**
+   - _Presiona `Ctrl + b` + `:` para abrir la línea de comandos._
+   - _Escribe `set stat` y presiona `Tab`. Selecciona `set status off` y presiona `Enter`._
+
+_Con esta función de autocompletado, trabajar con tmux se vuelve más fácil y eficiente, ya que puedes explorar y seleccionar comandos rápidamente sin necesidad de escribirlos por completo._
 
 ### **_Recursos adicionales_**
 
