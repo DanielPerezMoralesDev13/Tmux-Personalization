@@ -9,7 +9,7 @@
 - [***Instalación de Oh-My-Tmux***](#instalación-de-oh-my-tmux)
 - [***Prerrequisitos***](#prerrequisitos)
   - [***Paso 1: Clonar el repositorio***](#paso-1-clonar-el-repositorio)
-    - [*Paso 2: Enlazar el fichero de configuración*](#paso-2-enlazar-el-fichero-de-configuración)
+    - [***Paso 2: Enlazar el fichero de configuración***](#paso-2-enlazar-el-fichero-de-configuración)
       - [***Paso 3: Copiar el fichero local de configuración***](#paso-3-copiar-el-fichero-local-de-configuración)
       - [***Uso***](#uso)
 
@@ -49,10 +49,10 @@ cd ~/
 ```
 
 ```bash
-git clone https://github.com/gpakosz/.tmux.git
+git clone https://github.com/gpakosz/.tmux.git --depth=1
 ```
 
-### *Paso 2: Enlazar el fichero de configuración*
+### ***Paso 2: Enlazar el fichero de configuración***
 
 > *Enlaza el fichero de configuración de tmux proporcionado por Oh-My-Tmux:*
 
@@ -105,5 +105,5 @@ cp ~/.tmux/.tmux.conf.local ~/
 - *Inicia una nueva sesión de tmux y deberías ver la nueva configuración. Si ya tienes una sesión de tmux abierta, puedes recargar la configuración con el siguiente comando:*
 
 ```bash
-tmux source ~/.tmux.conf
+tmux source-file ~/.tmux.conf
 ```
