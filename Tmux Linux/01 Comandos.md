@@ -178,13 +178,20 @@ Ctrl-b [
 ```
 
 ```bash
-# Copiar el texto seleccionado
-Ctrl-b Alt-w
+# Iniciar el modo de copia y mover el cursor para seleccionar el texto a copiar
+# Usar Las Teclas Direccionales Para Seleccionar Texto
+Space
+
+# Tambien Se Puede Si Tienes Oh-My-Tmux
+Ctrl-b Space
 ```
 
 ```bash
-# Iniciar el modo de copia y mover el cursor para seleccionar el texto a copiar
-Ctrl-b Space, luego usar las teclas de flecha para seleccionar
+# Copiar el texto seleccionado
+Enter
+
+# Tambien Se Puede Si Tienes Oh-My-Tmux
+Alt-w
 ```
 
 ```bash
