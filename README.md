@@ -9,11 +9,21 @@
 
 *The repository contains the following markdown files:*
 
-1. *`installation.md`: This file contains detailed instructions on how to install tmux on Debian-based Linux operating systems and macOS.*
+1. *`Installation`: This file contains detailed instructions on how to install tmux on Debian-based Linux operating systems and macOS.*
 
-2. *`commands.md`: This file provides a list of tmux commands that are useful for navigation and managing sessions and windows.*
+2. *`Commands`: This file provides a list of tmux commands that are useful for navigation and managing sessions and windows.*
 
-3. *`customizations.md`: This file describes how to customize tmux using oh-my-tmux to suit your needs, including how to change keyboard shortcuts and modify the appearance of tmux.*
+**Tmux Customization: Example of Adapting Using Tmux Plugin Manager (TPM)**
+
+- *This guide shows how to customize `tmux` using the `tmux Plugin Manager (TPM)`. You will learn to:*
+
+1. **Install TPM:** *Set up TPM in your `tmux` environment to manage and add plugins easily.*
+2. **Modify Keyboard Shortcuts:** *Change the keyboard shortcuts to fit your preferences and enhance efficiency.*
+3. **Adjust Appearance:** *Customize the appearance of `tmux`, including colors, status bar styles, and other visual options.*
+
+- *This approach will allow you to tailor `tmux` to your specific needs, improving both its functionality and aesthetics.*
+
+---
 
 ## **Contributions**
 
