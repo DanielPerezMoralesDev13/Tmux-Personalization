@@ -13,7 +13,17 @@
 
 2. *`comandos.md`: Este fichero proporciona una lista de comandos de tmux que son útiles para la navegación y la gestión de sesiones y ventanas.*
 
-3. *`personalizacions.md`: Este fichero describe cómo personalizar tmux utilizando oh-my-tmux para adaptarlo a tus necesidades, incluyendo cómo cambiar los atajos de teclado y modificar la apariencia de tmux.*
+**Personalización de tmux: Ejemplo de adaptación mediante tmux Plugin Manager (TPM)**
+
+- *Esta guía muestra cómo personalizar `tmux` utilizando el `tmux Plugin Manager (TPM)`. Aprenderás a:*
+
+1. **Instalar TPM:** *Configura TPM en tu entorno de `tmux` para gestionar y añadir plugins fácilmente.*
+2. **Modificar Atajos de Teclado:** *Cambia los atajos de teclado para adaptarlos a tus preferencias y mejorar la eficiencia.*
+3. **Ajustar la Apariencia:** *Personaliza la apariencia de `tmux`, incluyendo colores, estilos de la barra de estado y otras opciones visuales.*
+
+- *Este enfoque te permitirá adaptar `tmux` a tus necesidades específicas, mejorando tanto su funcionalidad como su estética.*
+
+--- 
 
 ## **Contribuciones**
 
