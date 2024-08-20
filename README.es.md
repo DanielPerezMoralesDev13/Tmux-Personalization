@@ -9,9 +9,9 @@
 
 *El repositorio contiene los siguientes ficheros markdown:*
 
-1. *`instalacion.md`: Este fichero contiene instrucciones detalladas sobre cómo instalar tmux en sistemas operativos Linux basados en Debian y en macOS.*
+1. *`Instalacion`: Este fichero contiene instrucciones detalladas sobre cómo instalar tmux en sistemas operativos Linux basados en Debian y en macOS.*
 
-2. *`comandos.md`: Este fichero proporciona una lista de comandos de tmux que son útiles para la navegación y la gestión de sesiones y ventanas.*
+2. *`Comandos`: Este fichero proporciona una lista de comandos de tmux que son útiles para la navegación y la gestión de sesiones y ventanas.*
 
 **Personalización de tmux: Ejemplo de adaptación mediante tmux Plugin Manager (TPM)**
 
