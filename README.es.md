@@ -5,7 +5,7 @@
 
 > *Este repositorio contiene información y guías sobre cómo instalar y usar tmux en Linux. Tmux es un multiplexor de terminal que permite múltiples sesiones y ventanas en una sola terminal.*
 
-## **Contenido del Repositorio**
+## ***Contenido del Repositorio***
 
 *El repositorio contiene los siguientes ficheros markdown:*
 
@@ -13,7 +13,7 @@
 
 2. *`Comandos`: Este fichero proporciona una lista de comandos de tmux que son útiles para la navegación y la gestión de sesiones y ventanas.*
 
-**Personalización de tmux: Ejemplo de adaptación mediante tmux Plugin Manager (TPM)**
+### ***Personalización de tmux: Ejemplo de adaptación mediante tmux Plugin Manager (TPM)***
 
 - *Esta guía muestra cómo personalizar `tmux` utilizando el `tmux Plugin Manager (TPM)`. Aprenderás a:*
 
@@ -23,12 +23,12 @@
 
 - *Este enfoque te permitirá adaptar `tmux` a tus necesidades específicas, mejorando tanto su funcionalidad como su estética.*
 
---- 
+---
 
-## **Contribuciones**
+#### ***Contribuciones***
 
-> ¡Se aceptan contribuciones! Si tienes sugerencias, correcciones o deseas agregar contenido adicional a este proyecto, no dudes en abrir un problema o enviar una solicitud de extracción. Tu ayuda es fundamental para hacer de este proyecto una referencia completa y actualizada para la comunidad de desarrollo.
+> *¡Se aceptan contribuciones! Si tienes sugerencias, correcciones o deseas agregar contenido adicional a este proyecto, no dudes en abrir un problema o enviar una solicitud de extracción. Tu ayuda es fundamental para hacer de este proyecto una referencia completa y actualizada para la comunidad de desarrollo.*
 
-## **Licencia**
+#### ***Licencia***
 
-> Este repositorio se publica bajo la Licencia MIT. Siéntete libre de utilizar, modificar y distribuir el contenido de acuerdo con los términos de esta licencia.
+> *Este repositorio se publica bajo la Licencia MIT. Siéntete libre de utilizar, modificar y distribuir el contenido de acuerdo con los términos de esta licencia.*
