@@ -34,7 +34,274 @@
 9. **[gpakosz/.tmux](https://github.com/gpakosz/.tmux "https://github.com/gpakosz/.tmux")**
    - **gpakosz/.tmux** *es una configuración avanzada de **tmux** que incluye numerosas optimizaciones y mejoras en la interfaz de usuario. Esta configuración es popular por su enfoque en la personalización y mejora de la funcionalidad de **tmux**, proporcionando atajos de teclado adicionales, un status bar mejorado, y soporte para múltiples plugins.*
 
-## ***Sintaxis básica de `tmux.conf`***
+## ***`tmux list-keys` Comandos Básicos***
+
+- `bind-key -T copy-mode C-Space send-keys -X begin-selection`
+  - **Acción:** *Inicia la selección en el modo de copia.*
+  - **Prefijo:** *`C-Space` (Ctrl+Espacio).*
+
+- `bind-key -T copy-mode C-a send-keys -X start-of-line`
+  - **Acción:** *Mueve el cursor al inicio de la línea.*
+  - **Prefijo:** *`C-a` (Ctrl+a).*
+
+- `bind-key -T copy-mode C-b send-keys -X cursor-left`
+  - **Acción:** *Mueve el cursor a la izquierda.*
+  - **Prefijo:** *`C-b` (Ctrl+b).*
+
+- `bind-key -T copy-mode C-c send-keys -X cancel`
+  - **Acción:** *Cancela la selección actual.*
+  - **Prefijo:** *`C-c` (Ctrl+c).*
+
+- `bind-key -T copy-mode C-e send-keys -X end-of-line`
+  - **Acción:** *Mueve el cursor al final de la línea.*
+  - **Prefijo:** *`C-e` (Ctrl+e).*
+
+- `bind-key -T copy-mode C-f send-keys -X cursor-right`
+  - **Acción:** *Mueve el cursor a la derecha.*
+  - **Prefijo:** *`C-f` (Ctrl+f).*
+
+- `bind-key -T copy-mode C-g send-keys -X clear-selection`
+  - **Acción:** *Limpia la selección actual.*
+  - **Prefijo:** *`C-g` (Ctrl+g).*
+
+- `bind-key -T copy-mode C-k send-keys -X copy-pipe-end-of-line-and-cancel`
+  - **Acción:** *Copia desde la posición del cursor hasta el final de la línea y cancela.*
+  - **Prefijo:** *`C-k` (Ctrl+k).*
+
+- `bind-key -T copy-mode C-n send-keys -X cursor-down`
+  - **Acción:** *Mueve el cursor hacia abajo.*
+  - **Prefijo:** *`C-n` (Ctrl+n).*
+
+- `bind-key -T copy-mode C-p send-keys -X cursor-up`
+  - **Acción:** *Mueve el cursor hacia arriba.*
+  - **Prefijo:** *`C-p` (Ctrl+p).*
+
+- `bind-key -T copy-mode C-r command-prompt -i -I "#{pane_search_string}" -T search -p "(search up)" { send-keys -X search-backward-incremental "%%" }`
+  - **Acción:** *Abre una búsqueda incremental hacia atrás.*
+  - **Prefijo:** *`C-r` (Ctrl+r).*
+
+- `bind-key -T copy-mode C-s command-prompt -i -I "#{pane_search_string}" -T search -p "(search down)" { send-keys -X search-forward-incremental "%%" }`
+  - **Acción:** *Abre una búsqueda incremental hacia adelante.*
+  - **Prefijo:** *`C-s` (Ctrl+s).*
+
+- `bind-key -T copy-mode C-v send-keys -X page-down`
+  - **Acción:** *Desplaza la pantalla hacia abajo.*
+  - **Prefijo:** *`C-v` (Ctrl+v).*
+
+- `bind-key -T copy-mode C-w send-keys -X copy-pipe-and-cancel`
+  - **Acción:** *Copia la selección y cancela.*
+  - **Prefijo:** *`C-w` (Ctrl+w).*
+
+- `bind-key -T copy-mode Escape send-keys -X cancel`
+  - **Acción:** *Cancela la selección actual.*
+  - **Prefijo:** *`Escape`.*
+
+- `bind-key -T copy-mode Space send-keys -X page-down`
+  - **Acción:** *Desplaza la pantalla hacia abajo.*
+  - **Prefijo:** *`Space` (Espacio).*
+
+### ***Comandos para Búsqueda y Navegación***
+
+- `bind-key -T copy-mode , send-keys -X jump-reverse`
+  - **Acción:** *Salta a la ocurrencia anterior de la búsqueda.*
+  - **Prefijo:** *`,` (coma).*
+
+- `bind-key -T copy-mode \; send-keys -X jump-again`
+  - **Acción:** *Salta a la siguiente ocurrencia de la búsqueda.*
+  - **Prefijo:** *`\;` (punto y coma).*
+
+- `bind-key -T copy-mode F command-prompt -1 -p "(jump backward)" { send-keys -X jump-backward "%%" }`
+  - **Acción:** *Salta hacia atrás una cantidad especificada de líneas.*
+  - **Prefijo:** *`F`.*
+
+- `bind-key -T copy-mode N send-keys -X search-reverse`
+  - **Acción:** *Busca la ocurrencia anterior del texto buscado.*
+  - **Prefijo:** *`N`.*
+
+- `bind-key -T copy-mode P send-keys -X toggle-position`
+  - **Acción:** *Alterna la posición del cursor.*
+  - **Prefijo:** *`P`.*
+
+- `bind-key -T copy-mode R send-keys -X rectangle-toggle`
+  - **Acción:** *Alterna el modo de selección rectangular.*
+  - **Prefijo:** *`R`.*
+
+- `bind-key -T copy-mode T command-prompt -1 -p "(jump to backward)" { send-keys -X jump-to-backward "%%" }`
+  - **Acción:** *Salta hacia atrás hasta una línea específica.*
+  - **Prefijo:** *`T`.*
+
+- `bind-key -T copy-mode X send-keys -X set-mark`
+  - **Acción:** *Establece un marcador en la posición actual.*
+  - **Prefijo:** *`X`.*
+
+- `bind-key -T copy-mode f command-prompt -1 -p "(jump forward)" { send-keys -X jump-forward "%%" }`
+  - **Acción:** *Salta hacia adelante una cantidad especificada de líneas.*
+  - **Prefijo:** *`f`.*
+
+- `bind-key -T copy-mode g command-prompt -p "(goto line)" { send-keys -X goto-line "%%" }`
+  - **Acción:** *Salta a una línea específica.*
+  - **Prefijo:** *`g`.*
+
+- `bind-key -T copy-mode n send-keys -X search-again`
+  - **Acción:** *Busca la siguiente ocurrencia del texto buscado.*
+  - **Prefijo:** *`n`.*
+
+- `bind-key -T copy-mode q send-keys -X cancel`
+  - **Acción:** *Cancela la selección actual.*
+  - **Prefijo:** *`q`.*
+
+- `bind-key -T copy-mode r send-keys -X refresh-from-pane`
+  - **Acción:** *Actualiza el contenido desde el panel.*
+  - **Prefijo:** *`r`.*
+
+- `bind-key -T copy-mode t command-prompt -1 -p "(jump to forward)" { send-keys -X jump-to-forward "%%" }`
+  - **Acción:** *Salta hacia adelante hasta una línea específica.*
+  - **Prefijo:** *`t`.*
+
+### ***Comandos para el Ratón***
+
+- `bind-key -T copy-mode MouseDown1Pane select-pane`
+  - **Acción:** *Selecciona el panel en el que se hizo clic.*
+  - **Prefijo:** *`MouseDown1Pane`.*
+
+- `bind-key -T copy-mode MouseDrag1Pane select-pane \; send-keys -X begin-selection`
+  - **Acción:** *Selecciona el panel y empieza una selección.*
+  - **Prefijo:** *`MouseDrag1Pane`.*
+
+- `bind-key -T copy-mode MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel`
+  - **Acción:** *Copia la selección y cancela.*
+  - **Prefijo:** *`MouseDragEnd1Pane`.*
+
+- `bind-key -T copy-mode WheelUpPane select-pane \; send-keys -X -N 5 scroll-up`
+  - **Acción:** *Desplaza la pantalla hacia arriba.*
+  - **Prefijo:** *`WheelUpPane`.*
+
+- `bind-key -T copy-mode WheelDownPane select-pane \; send-keys -X -N 5 scroll-down`
+  - **Acción:** *Desplaza la pantalla hacia abajo.*
+  - **Prefijo:** *`WheelDownPane`.*
+
+- `bind-key -T copy-mode DoubleClick1Pane select-pane \; send-keys -X select-word \; run-shell -d 0.3 \; send-keys -X copy-pipe-and-cancel`
+  - **Acción:** *Selecciona una palabra con doble clic y la copia.*
+  - **Prefijo:** *`DoubleClick1Pane`.*
+
+- `bind-key -T copy-mode TripleClick1Pane select-pane \; send-keys -X select-line \; run-shell -d 0.3 \; send-keys -X copy-pipe-and-cancel`
+  - **Acción:** *Selecciona una línea con triple clic y la copia.*
+  - **Prefijo:** *`TripleClick1Pane`.*
+
+### ***Comandos de Navegación y Selección***
+
+- `bind-key -T copy-mode Home send-keys -X start-of-line`
+
+- **Acción:** *Mueve el cursor al inicio de la línea.*
+- **Prefijo:** *`Home`.*
+
+- `bind-key -T copy-mode End send-keys -X end-of-line`
+  - **Acción:** *Mueve el cursor al final de la línea.*
+  - **Prefijo:** *`End`.*
+
+- `bind-key -T copy-mode PageUp send-keys -X page-up`
+  - **Acción:** *Desplaza la pantalla hacia arriba.*
+  - **Prefijo:** *`PageUp`.*
+
+- `bind-key -T copy-mode PageDown send-keys -X page-down`
+  - **Acción:** *Desplaza la pantalla hacia abajo.*
+  - **Prefijo:** *`PageDown`.*
+
+- `bind-key -T copy-mode Up send-keys -X cursor-up`
+  - **Acción:** *Mueve el cursor hacia arriba.*
+  - **Prefijo:** *`Up`.*
+
+- `bind-key -T copy-mode Down send-keys -X cursor-down`
+  - **Acción:** *Mueve el cursor hacia abajo.*
+  - **Prefijo:** *`Down`.*
+
+- `bind-key -T copy-mode Left send-keys -X cursor-left`
+  - **Acción:** *Mueve el cursor hacia la izquierda.*
+  - **Prefijo:** *`Left`.*
+
+- `bind-key -T copy-mode Right send-keys -X cursor-right`
+  - **Acción:** *Mueve el cursor hacia la derecha.*
+  - **Prefijo:** *`Right`.*
+
+- `bind-key -T copy-mode A send-keys -X cursor-top`
+  - **Acción:** *Mueve el cursor al principio del panel.*
+  - **Prefijo:** *`A`.*
+
+- `bind-key -T copy-mode B send-keys -X cursor-bottom`
+  - **Acción:** *Mueve el cursor al final del panel.*
+  - **Prefijo:** *`B`.*
+
+#### ***Comandos de `tmux`***
+
+1. **`last-pane`**
+   - **Acción:** *Cambia al último panel activo en el que estuviste antes del actual. Es útil para alternar rápidamente entre dos paneles.*
+   - **Uso:** *`last-pane`*
+
+2. **`last-window`**
+   - **Acción:** *Cambia a la última ventana activa en la que estuviste antes de la ventana actual. Esto facilita la navegación entre ventanas.*
+   - **Uso:** *`last-window`*
+
+3. **`link-window`**
+   - **Acción:** *Permite vincular una ventana existente de una sesión a otra sesión. Esto significa que la misma ventana puede aparecer en múltiples sesiones.*
+   - **Uso:** *`link-window -s <session>:<window> -t <target-session>`*
+
+4. **`list-buffers`**
+   - **Acción:** *Muestra una lista de todos los buffers de tmux. Los buffers en tmux son áreas de memoria donde se puede copiar y almacenar texto.*
+   - **Uso:** *`list-buffers`*
+
+5. **`list-clients`**
+   - **Acción:** *Muestra una lista de todos los clientes conectados a la sesión tmux actual. Un cliente en tmux es una instancia de una conexión que interactúa con tmux.*
+   - **Uso:** *`list-clients`*
+
+6. **`list-commands`**
+   - **Acción:** *Muestra una lista de todos los comandos disponibles en tmux, junto con una breve descripción de cada uno.*
+   - **Uso:** *`list-commands`*
+
+7. **`list-keys`**
+   - **Acción:** *Muestra una lista de todas las combinaciones de teclas y comandos que están asignados en tmux. Esto te ayuda a ver qué comandos están asociados con qué atajos de teclado.*
+   - **Uso:** *`list-keys`*
+
+8. **`list-panes`**
+   - **Acción:** *Muestra una lista de todos los paneles en la ventana actual. Incluye información sobre cada panel, como su número y su tamaño.*
+   - **Uso:** *`list-panes`*
+
+9. **`list-sessions`**
+   - **Acción:** *Muestra una lista de todas las sesiones tmux existentes. Cada sesión puede contener múltiples ventanas y paneles.*
+   - **Uso:** *`list-sessions`*
+
+10. **`list-windows`**
+    - **Acción:** *Muestra una lista de todas las ventanas en la sesión actual. Incluye información como el número de ventana y el nombre.*
+    - **Uso:** *`list-windows`*
+
+11. **`load-buffer`**
+    - **Acción:** *Carga un buffer previamente guardado desde un archivo en el buffer actual de tmux. Esto es útil para restaurar texto copiado que se guardó en un archivo.*
+    - **Uso:** *`load-buffer <file>`*
+
+12. **`lock-client`**
+    - **Acción:** *Bloquea la interfaz del cliente tmux actual, requiriendo una contraseña para desbloquear. Esto es útil para proteger tu sesión mientras no estás presente.*
+    - **Uso:** *`lock-client`*
+
+13. **`lock-server`**
+    - **Acción:** *Bloquea el servidor tmux completo, requiriendo una contraseña para desbloquear. Esto bloquea todas las sesiones y clientes del servidor tmux.*
+    - **Uso:** *`lock-server`*
+
+14. **`lock-session`**
+    - **Acción:** *Bloquea la sesión actual de tmux, requiriendo una contraseña para desbloquear. Solo afecta a la sesión en la que se ejecuta.*
+    - **Uso:** *`lock-session`*
+
+### ***Ejemplo de uso de `tmux ls`***
+
+**El comando `tmux ls` muestra una lista de sesiones tmux activas:**
+
+```bash
+0: 1 windows (created Sun Aug 25 16:52:25 2024) (attached)
+```
+
+- *Esto indica que hay una sesión con el ID `0`, que tiene una ventana (`1 window`). La sesión fue creada el 25 de agosto de 2024 a las 16:52 y está actualmente adjunta (es decir, tienes un cliente conectado a ella).*
+
+*Estos comandos te proporcionan herramientas para gestionar y navegar en tmux de manera más eficiente, tanto a nivel de panes, ventanas y sesiones, como para manejar buffers y clientes.*
+
+#### ***Sintaxis básica de `tmux.conf`***
 
 **El archivo de configuración de `tmux` (`tmux.conf`) utiliza una serie de comandos que controlan las diferentes opciones y comportamientos de `tmux`. La sintaxis básica de los comandos es:**
 
@@ -648,7 +915,105 @@ set -g visual-activity on
 - *Se proporciona una combinación de teclas para limpiar rápidamente tanto la pantalla como el historial.*
 - *La actividad del panel se monitoriza y se notifica visualmente para asegurar que no se pierda ninguna salida importante.*
 
-### ***Configuracion Completa ~/.config/tmux/tmux.conf***
+### ***-- Navigation ----------------------------------------------------------------***
+
+1. **Crear sesión**
+   - `bind C-c new-session`
+   - **Descripción:** *Asocia la combinación de teclas `Ctrl-c` para crear una nueva sesión de `tmux`.*
+
+2. **Navegación entre sesiones**
+   - `bind BTab switch-client -l`
+   - **Descripción:** *Asocia `Ctrl-Tab` para cambiar a la última sesión activa. Esto te permite alternar rápidamente entre dos sesiones.*
+
+3. **División de ventanas**
+   - `bind - split-window -v`
+   - **Descripción:** *Asocia la tecla `-` para dividir la ventana actual horizontalmente.*
+   - `bind _ split-window -h`
+   - **Descripción:** *Asocia la tecla `_` para dividir la ventana actual verticalmente.*
+
+4. **Navegación entre paneles**
+   - `bind -r h select-pane -L`
+   - `bind -r j select-pane -D`
+   - `bind -r k select-pane -U`
+   - `bind -r l select-pane -R`
+   - **Descripción:** *Asocia las teclas `h`, `j`, `k`, y `l` (en modo repetitivo) para navegar entre paneles en las direcciones izquierda, abajo, arriba y derecha, respectivamente.*
+   - `bind > swap-pane -D`
+   - **Descripción:** *Asocia la tecla `>` para intercambiar el panel actual con el siguiente panel en la ventana.*
+   - `bind < swap-pane -U`
+   - **Descripción:** *Asocia la tecla `<` para intercambiar el panel actual con el panel anterior en la ventana.*
+
+5. **Redimensionamiento de paneles**
+   - `bind -r H resize-pane -L 2`
+   - `bind -r J resize-pane -D 2`
+   - `bind -r K resize-pane -U 2`
+   - `bind -r L resize-pane -R 2`
+   - **Descripción:** *Asocia las teclas `H`, `J`, `K`, y `L` (en modo repetitivo) para redimensionar el panel actual en 2 unidades en las direcciones izquierda, abajo, arriba y derecha, respectivamente.*
+
+6. **Navegación entre ventanas**
+   - `unbind n`
+   - `unbind p`
+   - **Descripción:** *Desvincula las teclas `n` y `p` de la navegación entre ventanas.*
+   - `bind -r C-h previous-window`
+   - **Descripción:** *Asocia `Ctrl-h` para seleccionar la ventana anterior.*
+   - `bind -r C-l next-window`
+   - **Descripción:** *Asocia `Ctrl-l` para seleccionar la siguiente ventana.*
+   - `bind Tab last-window`
+   - **Descripción:** *Asocia la tecla `Tab` para cambiar a la última ventana activa.*
+
+### ***-- Copy Mode -----------------------------------------------------------------***
+
+1. **Entrar en el modo de copiar**
+   - `bind Enter copy-mode`
+   - **Descripción:** *Asocia la tecla `Enter` para entrar en el modo de copiar.*
+
+2. **Acciones en el modo de copiar (modo vi)**
+   - `bind -T copy-mode-vi v send -X begin-selection`
+   - **Descripción:** *Asocia la tecla `v` en modo de copiar (estilo `vi`) para iniciar la selección de texto.*
+   - `bind -T copy-mode-vi C-v send -X rectangle-toggle`
+   - **Descripción:** *Asocia `Ctrl-v` para seleccionar un área rectangular de texto.*
+   - `bind -T copy-mode-vi y send -X copy-selection-and-cancel`
+   - **Descripción:** *Asocia `y` para copiar la selección de texto y cancelar el modo de copiar.*
+   - `bind -T copy-mode-vi Escape send -X cancel`
+   - **Descripción:** *Asocia `Escape` para cancelar la selección y salir del modo de copiar.*
+   - `bind -T copy-mode-vi H send -X start-of-line`
+   - **Descripción:** *Asocia `H` para mover el cursor al inicio de la línea actual.*
+   - `bind -T copy-mode-vi L send -X end-of-line`
+   - **Descripción:** *Asocia `L` para mover el cursor al final de la línea actual.*
+
+### ***-- Buffers -------------------------------------------------------------------***
+
+1. **Gestión de buffers**
+   - `bind b list-buffers`
+   - **Descripción:** *Asocia la tecla `b` para listar todos los buffers de tmux.*
+   - `bind p paste-buffer -p`
+   - **Descripción:** *Asocia la tecla `p` para pegar el buffer en la parte superior de la lista de buffers.*
+   - `bind P choose-buffer`
+   - **Descripción:** *Asocia la tecla `P` para elegir de qué buffer pegar.*
+
+### ***Configuraciones Comentadas***
+
+**Estas configuraciones están comentadas y no se ejecutarán a menos que se descomenten. Aquí está el propósito de cada una:**
+
+1. **Buscar sesión**
+   - `# bind C-f command-prompt -p find-session 'switch-client -t %%'`
+   - **Descripción:** *Permitir buscar y cambiar a una sesión específica usando `Ctrl-f`.*
+
+2. **Maximizar panel**
+   - `# bind + run "cut -c3- '#{TMUX_CONF}' | sh -s _maximize_pane '#{session_name}' '#D'"`
+   - **Descripción:** *Maximizar el panel actual. Descomentarlo si necesitas esta funcionalidad.*
+
+3. **Alternar mouse**
+   - `# bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse"`
+   - **Descripción:** *Alternar el uso del mouse en `tmux`.*
+
+4. **Pathpicker de Facebook**
+   - `# bind F run "cut -c3- '#{TMUX_CONF}' | sh -s _fpp '#{pane_id}' '#{pane_current_path}'"`
+   - **Descripción:** *Ejecutar una herramienta específica para gestionar rutas (Pathpicker) usando `F`.*
+
+5. **Copiar al portapapeles (X11, Wayland, macOS, Windows)**
+   - *Estas líneas permiten copiar al portapapeles de diferentes sistemas operativos y entornos gráficos (X11, Wayland, macOS, Windows).*
+
+#### ***Configuracion Completa ~/.config/tmux/tmux.conf***
 
 ```bash
 # Autor: Daniel Benjamin Perez Morales
