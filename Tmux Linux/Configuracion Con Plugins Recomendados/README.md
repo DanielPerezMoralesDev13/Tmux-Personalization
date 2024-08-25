@@ -29,8 +29,7 @@
    - **catppuccin/tmux** *proporciona un tema estéticamente agradable para **tmux** basado en la paleta de colores de **Catppuccin**. Este plugin es ideal para quienes buscan una apariencia moderna y consistente en su entorno de **tmux**.*
 
 8. **[sainnhe/tmux-fzf](https://github.com/sainnhe/tmux-fzf "https://github.com/sainnhe/tmux-fzf")**
-   > [!IMPORTANT]
-   > *Para utilizar el plugin sainnhe/tmux-fzf, es necesario tener instalado el binario fzf. Puedes encontrar la guía de instalación en el repositorio oficial de fzf. Consulta el README de fzf para obtener instrucciones detalladas sobre cómo instalarlo [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation "https://github.com/junegunn/fzf?tab=readme-ov-file#installation").*
+   - **Para utilizar el plugin sainnhe/tmux-fzf, es necesario tener instalado el binario fzf. Puedes encontrar la guía de instalación en el repositorio oficial de fzf. Consulta el README de fzf para obtener instrucciones detalladas sobre cómo instalarlo [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation "https://github.com/junegunn/fzf?tab=readme-ov-file#installation").**
 
    - *Este plugin integra **fzf**, un potente motor de búsqueda difusa, dentro de **tmux**. Con **tmux-fzf**, puedes buscar entre tus ventanas y paneles de manera rápida y eficiente, mejorando la productividad al moverte entre diferentes partes de tu sesión.*
 
