@@ -529,7 +529,7 @@ run -b '~/.tmux/plugins/tpm/tpm'
 **Explicación:**
 
 - **`setenv -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.tmux/plugins/"`:** *Establece la ruta del gestor de plugins de `tmux`.*
-- **`if "test ! -d ~/.tmux/plugins/tpm" "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"`:** *Comprueba si el gestor de plugins `tpm` está instalado. Si no lo está, lo clona desde GitHub e instala los plugins configurados.*
+- **`if "test ! -d ~/.tmux/plugins/tpm" "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --depth=1 && ~/.tmux/plugins/tpm/bin/install_plugins'"`:** *Comprueba si el gestor de plugins `tpm` está instalado. Si no lo está, lo clona desde GitHub e instala los plugins configurados.*
 - **`run -b '~/.tmux/plugins/tpm/tpm'`:** *Ejecuta `tpm` en segundo plano para cargar los plugins.*
 
 > [!IMPORTANT]
