@@ -341,7 +341,16 @@ set [-g | -s] option value
 
 **Explicación:** *Este comando configura la opción `monitor-activity` para que esté activa. `setw` se usa para establecer opciones relacionadas específicamente con las ventanas de `tmux`. Con esta opción activada, `tmux` te notificará si hay actividad (como salida nueva) en una ventana que no estás viendo activamente.*
 
-#### ***3. `set -g status-position top`***
+#### ***3. `setw -g window-status-activity-style none`***
+
+- **Comando:** *`setw` (abreviatura de `set-window-option`)*
+- **Flag:** *`-g` (global)*
+- **Opción:** *`window-status-activity-style`*
+- **Valor:** *`none`*
+
+**Explicación:** *Este comando configura la opción `window-status-activity-style` en `tmux` para que no se aplique ningún estilo especial cuando hay actividad en una ventana. `setw` se usa para establecer opciones relacionadas con las ventanas en `tmux`, y en este caso, se está desactivando cualquier resaltado o cambio de estilo en el nombre de la ventana cuando detecta actividad.*
+
+#### ***4. `set -g status-position top`***
 
 - **Comando:** *`set`*
 - **Flag:** *`-g` (global)*
@@ -350,7 +359,7 @@ set [-g | -s] option value
 
 **Explicación:** *Este comando mueve la barra de estado de `tmux` a la parte superior de la pantalla. La barra de estado normalmente se encuentra en la parte inferior, pero con esta opción configurada, se desplaza a la parte superior. Esto aplica globalmente a todas las sesiones de `tmux`.*
 
-#### ***4. `set -g pane-base-index 1`***
+#### ***5. `set -g pane-base-index 1`***
 
 - **Comando:** *`set`*
 - **Flag:** *`-g` (global)*
@@ -359,7 +368,7 @@ set [-g | -s] option value
 
 **Explicación:** *Este comando establece el índice base para los paneles en `1` en lugar de `0`. `tmux` normalmente numera los paneles dentro de una ventana comenzando desde `0`, pero con esta configuración, el primer panel será el `1`. Este ajuste se aplica globalmente.*
 
-#### ***5. `set-window-option -g pane-base-index 1`***
+#### ***6. `set-window-option -g pane-base-index 1`***
 
 - **Comando:** *`set-window-option`*
 - **Flag:** *`-g` (global)*
@@ -368,7 +377,7 @@ set [-g | -s] option value
 
 **Explicación:** *Similar al comando anterior, pero este se usa para asegurar que la configuración de índice de panel también se aplica a nivel de ventana. `set-window-option` es una forma más explícita de `setw` para configurar opciones de ventana.*
 
-#### ***6. `set-option -g renumber-windows on`***
+#### ***7. `set-option -g renumber-windows on`***
 
 - **Comando:** *`set-option`*
 - **Flag:** *`-g` (global)*
@@ -377,7 +386,7 @@ set [-g | -s] option value
 
 **Explicación:** *Este comando hace que `tmux` renumere automáticamente las ventanas cuando cierras alguna. Es útil para mantener un orden secuencial en las ventanas sin saltos en la numeració***n. `set-option` es un comando genérico para establecer cualquier opción de `tmux`.***
 
-#### ***7. `set -g history-limit 10000`***
+#### ***8. `set -g history-limit 10000`***
 
 - **Comando:** *`set`*
 - **Flag:** *`-g` (global)*
@@ -386,7 +395,7 @@ set [-g | -s] option value
 
 **Explicación:** *Este comando establece el límite de historial de `tmux` en `10000` líneas. Esto significa que puedes desplazarte hacia atrás hasta `10000` líneas en cada ventana, lo cual es útil si necesitas revisar mucha salida anterior.*
 
-#### ***8. `set -g mode-keys vi`***
+#### ***9. `set -g mode-keys vi`***
 
 - **Comando:** *`set`*
 - **Flag:** *`-g` (global)*
