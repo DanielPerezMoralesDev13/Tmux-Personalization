@@ -469,7 +469,15 @@ set -g @catppuccin_status_left_separator " "
 set -g @catppuccin_status_right_separator ""
 set -g @catppuccin_status_fill "icon"
 set -g @catppuccin_status_connect_separator "no"
-set -g @catppuccin_directory_text "#{pane_current_path}"
+
+# Configuracion Ruta Absoluta
+# set -g @catppuccin_directory_text "#{pane_current_path}"
+
+# Configuracion Sustituir $HOME Por ~
+# set -g @catppuccin_directory_text "#( echo \#{pane_current_path} | sed \"s|$HOME|~|\" )"
+
+# Configuracion Ruta Relative
+set -g @catppuccin_directory_text "#{b:pane_current_path}"
 ```
 
 - **Comando:** *`set`*
@@ -485,7 +493,52 @@ set -g @catppuccin_directory_text "#{pane_current_path}"
 - **`@catppuccin_window_number_position`:** *Establece la posición del número de ventana en la barra de estado.*
 - **`@catppuccin_window_default_fill`, `@catppuccin_window_current_fill`:** *Define el relleno visual de las ventanas en la barra de estado.*
 - **`@catppuccin_status_modules_right`:** *Configura los módulos que aparecen a la derecha de la barra de estado.*
-- **`@catppuccin_directory_text "#{pane_current_path}"`:** *Muestra la ruta del directorio actual del panel en la barra de estado.*
+
+### ***Configuración de Ruta Absoluta***
+
+```bash
+# Configuracion Ruta Absoluta
+set -g @catppuccin_directory_text "#{pane_current_path}"
+```
+
+- **Descripción:** *Esta configuración muestra la ruta completa o absoluta del directorio actual en el panel de `tmux`.*
+- **Sintaxis:**
+  - **`#{pane_current_path}`:** *Este es un marcador de posición en `tmux` que se reemplaza dinámicamente con la ruta absoluta del directorio en el que se encuentra el panel activo.*
+- **Ejemplo:** *Si estás en el directorio `/home/user/proyecto`, el valor mostrado será exactamente esa ruta completa.*
+
+### ***Configuración para Sustituir `$HOME` por `~`***
+
+```bash
+# Configuracion Sustituir $HOME Por ~
+set -g @catppuccin_directory_text "#( echo \#{pane_current_path} | sed \"s|$HOME|~|\" )"
+```
+
+- **Descripción:** *Esta configuración transforma la ruta absoluta para que el directorio de inicio (`$HOME`) sea representado por `~`, lo que es una convención común en muchas interfaces de línea de comandos.*
+- **Sintaxis:**
+  - **`#( echo \#{pane_current_path} | sed \"s|$HOME|~|\" )`:** *Este es un comando de shell que se ejecuta dentro de `tmux`:*
+    - **`echo \#{pane_current_path}`:** *Imprime la ruta absoluta del directorio actual.*
+    - **`sed \"s|$HOME|~|\"`:** *Usa `sed` para sustituir el valor de `$HOME` por `~`. Aquí, `s|...|...|` es la sintaxis de sustitución en `sed`, donde el primer `...` es el texto a buscar y el segundo `...` es el texto que lo reemplazará.*
+- **Ejemplo:** *Si `$HOME` es `/home/user`, una ruta como `/home/user/proyecto` se mostrará como `~/proyecto`.*
+
+### ***Configuración de Ruta Relativa***
+
+```bash
+# Configuracion Ruta Relative
+set -g @catppuccin_directory_text "#{b:pane_current_path}"
+```
+
+- **Descripción:** *Esta configuración muestra la ruta relativa del directorio actual, es decir, la ruta desde el directorio raíz del proyecto o desde la carpeta de trabajo actual.*
+- **Sintaxis:**
+  - **`#{b:pane_current_path}`:** *Aquí `#{b:...}` es un formato especial en `tmux` que convierte una ruta absoluta en una relativa.*
+    - **`b:`:** *Esto indica que se debe calcular la ruta relativa.*
+    - **`pane_current_path`:** *Es la ruta absoluta del panel actual, que será convertida a relativa.*
+- **Ejemplo:** *Si estás en `/home/user/proyecto` y `proyecto` es tu directorio base, entonces se mostrará solo `proyecto`.*
+
+- **Resumen:**
+
+- **`#{pane_current_path}`:** *Muestra la ruta completa (absoluta).*
+- **`#( echo \#{pane_current_path} | sed \"s|$HOME|~|\" )`:** *Muestra la ruta completa, pero reemplaza el directorio de inicio con `~`.*
+- **`#{b:pane_current_path}`:** *Muestra la ruta relativa desde la raíz del proyecto o la carpeta base.*
 
 ### ***4. Recarga de Configuración***
 
@@ -1051,6 +1104,7 @@ set -g visual-activity on
 # Configuración básica
 set -g mouse on
 setw -g monitor-activity on
+setw -g window-status-activity-style none
 set -g status-position top
 set -g pane-base-index 1
 set-window-option -g pane-base-index 1
@@ -1087,7 +1141,15 @@ set -g @catppuccin_status_left_separator " "
 set -g @catppuccin_status_right_separator ""
 set -g @catppuccin_status_fill "icon"
 set -g @catppuccin_status_connect_separator "no"
-set -g @catppuccin_directory_text "#{pane_current_path}"
+
+# Configuracion Ruta Absoluta
+# set -g @catppuccin_directory_text "#{pane_current_path}"
+
+# Configuracion Sustituir $HOME Por ~
+# set -g @catppuccin_directory_text "#( echo \#{pane_current_path} | sed \"s|$HOME|~|\" )"
+
+# Configuracion Ruta Relative
+set -g @catppuccin_directory_text "#{b:pane_current_path}"
 
 # Recarga de configuración
 unbind r
@@ -1148,7 +1210,7 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 # Inicialización del plugin manager
 setenv -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.tmux/plugins/"
 if "test ! -d ~/.tmux/plugins/tpm" \
-   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --depth=1 && ~/.tmux/plugins/tpm/bin/install_plugins'"
 run -b '~/.tmux/plugins/tpm/tpm'
 
 # : << 'EOF'
